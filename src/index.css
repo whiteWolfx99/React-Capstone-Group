@@ -29,12 +29,12 @@ body {
   font-size: 18px;
 }
 
-.nav-links a:hover {
-  color: rgb(255, 0, 0);
+.active {
+  text-decoration: underline;
 }
 
-.nav-links a:active {
-  color: rgb(0, 191, 255);
+.active a {
+  color: rgb(255, 0, 0);
 }
 
 .link-border {
