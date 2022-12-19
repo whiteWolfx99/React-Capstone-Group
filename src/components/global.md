@@ -1,0 +1,1 @@
+// this is for global components that may use in diffrent page
