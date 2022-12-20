@@ -1,10 +1,29 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+
+const baseUrl = 'https://api.spacexdata.com/v3/rockets';
+
+export const fetchRockets = createAsyncThunk(
+  'rockets/fetchRockets',
+  async () => {
+    const response = await fetch(baseUrl);
+    const rockets = await response.json();
+    return rockets;
+  },
+);
 
 const RocketSlice = createSlice({
   name: 'rockets',
-  initialState: [],
+  initialState: {
+    rockets: [],
+  },
   reducers: {},
-  extraReducers: () => {
+  extraReducers: {
+    /* eslint-disable */
+    [fetchRockets.fulfilled]: (state, action) => {
+      state.status = "succeeded";
+      state.rockets = action.payload;
+    },
+    /* eslint-enable */
   },
 });
 
