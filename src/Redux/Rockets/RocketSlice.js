@@ -16,7 +16,14 @@ const RocketSlice = createSlice({
   initialState: {
     rockets: [],
   },
-  reducers: {},
+  reducers: {
+    reserveRocket: (state, action) => {
+      const rocket = state.rockets.find((rocket) => rocket.id === action.payload.id);
+      if (rocket) {
+        rocket.reserved = action.payload.reserved;
+      }
+    },
+  },
   extraReducers: {
     /* eslint-disable */
     [fetchRockets.fulfilled]: (state, action) => {
@@ -26,5 +33,7 @@ const RocketSlice = createSlice({
     /* eslint-enable */
   },
 });
+
+export const { reserveRocket } = RocketSlice.actions;
 
 export default RocketSlice.reducer;
