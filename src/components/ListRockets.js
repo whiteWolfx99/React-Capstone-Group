@@ -14,6 +14,13 @@ function ListRockets() {
     const rocket = rockets.find((rocket) => rocket.id === id);
     const { reserved } = rocket;
     dispatch(reserveRocket({ id, reserved: !reserved }));
+
+    rockets.map((rocket) => {
+      if (rocket.id === id) {
+        console.log(rocket.reserved);
+      }
+      return rocket;
+    });
   };
 
   return (
