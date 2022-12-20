@@ -92,7 +92,7 @@ body {
   width: 90%;
 }
 
-.rocket_row button {
+.Reserve_rocket {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -100,4 +100,16 @@ body {
   color: #fff;
   font-size: 18px;
   cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.cancel_Reservation {
+  padding: 10px 20px;
+  border: 1px solid rgb(153, 152, 152);
+  border-radius: 5px;
+  background-color: #fff;
+  color: rgb(153, 152, 152);
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
 }
