@@ -37,8 +37,15 @@ const RocketSlice = createSlice({
   extraReducers: {
     /* eslint-disable */
     [fetchRockets.fulfilled]: (state, action) => {
-      state.status = "succeeded";
-      state.rockets = action.payload;
+      const arr = action.payload.map((rocket) => ({
+        id: rocket.id,
+        rocket_name: rocket.rocket_name,
+        reserved: false,
+        description: rocket.description,
+        flickr_images: rocket.flickr_images,
+      }));
+
+      state.rockets = state.rockets(arr);
     },
     /* eslint-enable */
   },
