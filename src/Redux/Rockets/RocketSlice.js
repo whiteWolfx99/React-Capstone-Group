@@ -18,17 +18,34 @@ const RocketSlice = createSlice({
   },
   reducers: {
     reserveRocket: (state, action) => {
-      const rocket = state.rockets.find((rocket) => rocket.id === action.payload.id);
-      if (rocket) {
-        rocket.reserved = action.payload.reserved;
-      }
+      const rockets = state.rockets.map((rocket) => {
+        if (rocket.id === action.payload.id) {
+          return {
+            ...rocket,
+            reserved: action.payload.reserved,
+          };
+        }
+        return rocket;
+      });
+      return {
+        ...state,
+        rockets,
+        reserved: action.payload.reserved,
+      };
     },
   },
   extraReducers: {
     /* eslint-disable */
     [fetchRockets.fulfilled]: (state, action) => {
-      state.status = "succeeded";
-      state.rockets = action.payload;
+      const arr = action.payload.map((rocket) => ({
+        id: rocket.id,
+        rocket_name: rocket.rocket_name,
+        reserved: false,
+        description: rocket.description,
+        flickr_images: rocket.flickr_images,
+      }));
+
+      state.rockets = state.rockets(arr);
     },
     /* eslint-enable */
   },
