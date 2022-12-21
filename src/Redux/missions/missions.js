@@ -31,9 +31,9 @@ const missionsSlice = createSlice({
         id: mission.mission_id,
         name: mission.mission_name,
         description: mission.description,
+        reserved: false,
       }));
-      state.splice(0, state.length);
-      state.push(...newState);
+      state.concat(newState);
     });
   },
 });

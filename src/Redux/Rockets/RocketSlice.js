@@ -45,7 +45,7 @@ const RocketSlice = createSlice({
         flickr_images: rocket.flickr_images,
       }));
 
-      state.rockets = state.rockets(arr);
+      state.rockets = state.rockets.concat(arr);;
     },
     /* eslint-enable */
   },

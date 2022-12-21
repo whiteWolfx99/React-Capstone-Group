@@ -123,6 +123,7 @@ table {
   font-size: 14px;
   font-weight: 800;
   border-color: #fcf9f9;
+  width: 100%;
 }
 
 td {
@@ -163,6 +164,25 @@ button {
 .button-active {
   border: 1px solid rgb(243, 60, 81);
   color: rgb(243, 60, 81);
+}
+
+.profile {
+  display: flex;
+  gap: 30px;
+}
+
+.profile td {
+  font-size: 12px;
+  font-weight: 200;
+  padding: 10px 10px;
+}
+
+.reservedMissions {
+  flex: 1;
+}
+
+.reservedRockets {
+  flex: 1;
 }
 
 .rocket-col span {
