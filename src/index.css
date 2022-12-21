@@ -90,6 +90,8 @@ body {
 .rocket_row p {
   font-size: 20px;
   width: 90%;
+  letter-spacing: 1px;
+  line-height: 1.5;
 }
 
 .Reserve_rocket {
@@ -121,6 +123,7 @@ table {
   font-size: 14px;
   font-weight: 800;
   border-color: #fcf9f9;
+  width: 100%;
 }
 
 td {
@@ -161,4 +164,34 @@ button {
 .button-active {
   border: 1px solid rgb(243, 60, 81);
   color: rgb(243, 60, 81);
+}
+
+.profile {
+  display: flex;
+  gap: 30px;
+}
+
+.profile td {
+  font-size: 12px;
+  font-weight: 200;
+  padding: 10px 10px;
+}
+
+.reservedMissions {
+  flex: 1;
+}
+
+.reservedRockets {
+  flex: 1;
+}
+
+.rocket-col span {
+  padding: 5px 7px;
+  margin: 0 10px 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(27, 171, 255);
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.4s ease-in-out;
 }
