@@ -6,10 +6,6 @@ const Missions = () => {
   const missions = useSelector((state) => state.missions);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchMissions());
-  // }, [dispatch]);
-
   return (
     <div>
       <table border="1">
