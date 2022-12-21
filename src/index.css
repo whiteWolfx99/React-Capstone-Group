@@ -90,6 +90,8 @@ body {
 .rocket_row p {
   font-size: 20px;
   width: 90%;
+  letter-spacing: 1px;
+  line-height: 1.5;
 }
 
 .Reserve_rocket {
@@ -164,21 +166,32 @@ button {
   color: rgb(243, 60, 81);
 }
 
-.profile{
+.profile {
   display: flex;
   gap: 30px;
 }
 
-.profile td{
+.profile td {
   font-size: 12px;
   font-weight: 200;
   padding: 10px 10px;
 }
 
-.reservedMissions{
-   flex: 1;
+.reservedMissions {
+  flex: 1;
 }
 
-.reservedRockets{
+.reservedRockets {
   flex: 1;
+}
+
+.rocket-col span {
+  padding: 5px 7px;
+  margin: 0 10px 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(27, 171, 255);
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.4s ease-in-out;
 }
