@@ -2,10 +2,12 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = [];
 
+const baseUrl = 'https://api.spacexdata.com/v3/missions';
+
 export const fetchMissions = createAsyncThunk(
   'missions/fetchMissions',
   async () => {
-    const response = await fetch('https://api.spacexdata.com/v3/missions');
+    const response = await fetch(baseUrl);
     const data = await response.json();
     return data;
   },
@@ -33,7 +35,9 @@ const missionsSlice = createSlice({
         description: mission.description,
         reserved: false,
       }));
-      state.concat(newState);
+
+      const updatedState = [...newState];
+      return updatedState;
     });
   },
 });
