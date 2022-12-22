@@ -19,7 +19,7 @@ function ListRockets() {
   return (
     <div className="rocket_container">
       {rockets.slice(0, 4).map((rocket) => (
-        <div key={rocket.id} className="rocket_row">
+        <div key={rocket.id} className="rocket_row" data-testid="rocket-container">
           <img src={rocket.flickr_images[0]} alt={rocket.name} />
           <div className="rocket-col">
             <h2>{rocket.rocket_name}</h2>
